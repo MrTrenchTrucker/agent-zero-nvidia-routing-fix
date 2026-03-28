@@ -4,6 +4,8 @@
 **Date:** 2026-03-28
 **Intended Audience:** Agent Zero Core Development Team
 **Classification:** Public (no secrets contained — all credentials redacted)
+**Official Issue:** https://github.com/agent0ai/agent-zero/issues/1360
+**Official PR:** https://github.com/agent0ai/agent-zero/pull/1361
 **Summary:** A misconfigured `utility_model.api_base` (empty string) caused cascading `AuthenticationError` floods. Agent Zero correctly diagnosed the problem and attempted autonomous self-repair. The self-repair logic was sound, but the patch was written with incorrect Python indentation (1-space vs. 8-space), causing an `IndentationError` that blocked all agent responses. Full manual recovery, root-cause elimination, persistence hardening, and a patch survival mechanism were applied. A custom APU Governor plugin kept the agent partially operational for 24+ hours throughout the incident.
 
 ---
